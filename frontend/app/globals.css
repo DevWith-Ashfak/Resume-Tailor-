@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* react-markdown prose overrides */
+.prose table {
+  @apply w-full text-sm;
+}
+.prose th {
+  @apply bg-gray-50 px-3 py-2 text-left font-medium;
+}
+.prose td {
+  @apply px-3 py-2 border-t border-gray-100;
+}
+.prose code {
+  @apply bg-gray-100 rounded px-1.5 py-0.5 text-xs font-mono;
+}
+.prose pre {
+  @apply bg-gray-900 text-gray-100 rounded-lg p-4 overflow-x-auto;
+}
