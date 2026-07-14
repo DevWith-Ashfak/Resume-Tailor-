@@ -70,13 +70,13 @@ export function PdfDropzone() {
 
   if (file) {
     return (
-      <div className="flex items-center justify-between rounded-lg border border-brand-200 bg-brand-50 p-4 animate-fade-in">
+      <div className="flex items-center justify-between rounded-xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-4 animate-fade-in shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-100">
-            <FileText className="h-5 w-5 text-brand-600" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 shadow-sm">
+            <FileText className="h-5 w-5 text-emerald-600" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-900 truncate max-w-[200px]">
+            <p className="text-sm font-semibold text-gray-900 truncate max-w-[200px]">
               {file.name}
             </p>
             <p className="text-xs text-gray-500">{formatFileSize(file.size)}</p>
@@ -84,7 +84,7 @@ export function PdfDropzone() {
         </div>
         <button
           onClick={removeFile}
-          className="rounded-full p-1.5 text-gray-400 hover:bg-red-50 hover:text-red-500 transition-colors"
+          className="rounded-full p-2 text-gray-400 hover:bg-red-50 hover:text-red-500 transition-all hover:scale-110"
           aria-label="Remove file"
         >
           <X className="h-4 w-4" />
@@ -98,23 +98,21 @@ export function PdfDropzone() {
       <div
         {...getRootProps()}
         className={cn(
-          "relative flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-8 transition-colors cursor-pointer",
+          "relative flex flex-col items-center justify-center rounded-xl border-2 border-dashed p-10 transition-all cursor-pointer",
           dragActive || isDragActive
-            ? "border-brand-500 bg-brand-50"
-            : "border-gray-300 hover:border-brand-400 hover:bg-gray-50",
-          isUploading && "pointer-events-none opacity-50"
+            ? "border-blue-400 bg-blue-50/70 scale-[1.02]"
+            : "border-gray-200 hover:border-blue-300 hover:bg-gray-50/80",
+          isUploading && "pointer-events-none opacity-60"
         )}
       >
         <input {...getInputProps()} />
-        <div className="flex flex-col items-center gap-2 text-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-100">
-            <Upload className="h-6 w-6 text-brand-600" />
+        <div className="flex flex-col items-center gap-3 text-center">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 shadow-sm">
+            <Upload className="h-7 w-7 text-blue-600" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-700">
-              {isUploading
-                ? "Uploading..."
-                : "Drop your resume PDF here"}
+            <p className="text-sm font-semibold text-gray-700">
+              {isUploading ? "Uploading…" : "Drop your resume PDF here"}
             </p>
             <p className="text-xs text-gray-400 mt-1">
               {isUploading ? "Please wait…" : "or click to browse · PDF only · Max 5 MB"}
@@ -124,7 +122,7 @@ export function PdfDropzone() {
       </div>
 
       {uploadError && (
-        <div className="mt-2 flex items-center gap-2 rounded-md bg-red-50 p-3 text-sm text-red-600 animate-fade-in">
+        <div className="mt-3 flex items-center gap-2 rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-600 animate-fade-in">
           <AlertCircle className="h-4 w-4 shrink-0" />
           <span>{uploadError}</span>
         </div>
