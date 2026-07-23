@@ -45,12 +45,14 @@ I built this because I was tired of manually cross-referencing every job descrip
 - Node.js 18+
 - npm
 
+
 ### 1. Backend
 
 ```bash
 cd backend
 npm install
 npm run dev
+
 # API runs on http://localhost:4000
 ```
 
@@ -69,11 +71,13 @@ Then open `http://localhost:3000`, upload a PDF resume, paste a job description,
 
 ## 🔮 What I'd Add Next
 
+
 - **LLM Integration** — Swap the current rule-based keyword matching with an actual LLM (OpenAI / Claude) for smarter, more nuanced analysis.
 - **Database** — Replace the in-memory store with MySQL or MongoDB so results persist across restarts.
 - **User Accounts** — Auth (NextAuth.js) so users can save and revisit their analyses.
 - **More Resume Formats** — Support for DOCX and plain-text resumes in addition to PDF.
 - **ATS Score** — Parse the resume against common ATS filters to give an actual ATS compatibility score.
 - **Dark Mode** — Already set up with Tailwind, just needs a theme toggle.
+
 
 ---
